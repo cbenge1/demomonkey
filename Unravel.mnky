@@ -1,0 +1,99 @@
+;========================================
+; DemoMonkey for Unravel
+;========================================
+[Options]
+; Introduce a option using @
+; Use @include to specify a list of urls where these replacements should be applied
+@include[] = /^https?://.*demomonkey\.net/.*$/
+@include[] = /^https://github.com/svrnm/demomonkey$
+@include[] = /^https?://demo.*\.saas\..*/.*$/
+@include[] = /^https?://playground-databricks4760\.unraveldata\..*/.*$/
+; Use @exclude to remove urls from the lists of included urls
+
+[Variables]                         // Set variables
+$prospect       = CUSTOMER              
+$user           = cbenge
+$workspace1     = AI-Workspace  
+$workspace2     = ML-Workspace        
+$budget1        = AI-Budget             
+$budget2        = ML-Budget             
+$bus_unit1      = Marketing
+$bus_unit1_ly   = mktg
+$bus_unit2      = Sales
+$bus_unit2_ly   = sales
+
+$job01          = Job01
+$job02          = Job02
+$job03          = Job03
+$job04          = $bus_unit1 Data Injestion
+$job05          = $bus_unit2 Data Injestion
+
+; These need updating right before demo as the Playground changes frequently
+12%             = 32%
+
+
+;------------------------------------
+; General
+;------------------------------------
+kinala          = $user
+
+;------------------------------------
+;------------------------------------
+;            DATABRICKS
+;------------------------------------
+;------------------------------------
+
+;------------------------------------
+; Costs
+;------------------------------------
+
+[Insights]
+poc: giri           = Test
+POC: Giri           = Development
+
+[Trends]
+;DBU = cpu
+
+[Chargeback]
+AI-ML-Cluster-60-1      = $workspace1
+AI-ML-Cluster-60-2      = $workspace2-PROD
+AI-ML-Cluster-60-3      = $workspace2
+AI-ML-Cluster-60-4      = $workspace2
+AI-ML-Cluster-60-8      = $workspace1-DEV
+Customer Success        = $bus_unit1
+Business Insights       = $bus_unit1 Insights
+AdTech                  = $bus_unit1
+NULL                    = $bus_unit2
+HighGCEvent-cluster     = ML-Cluster
+HighIOEvent-cluster     = AI-Cluster
+
+[Budget]
+Finance Budget          = $budget1
+test                    = $budget2
+
+;------------------------------------
+; Compute
+;------------------------------------
+
+[Cluster Name]
+High GC Event               = Finance Investment Patterns
+Light Executor Event Spark3 = Fraud Detection Analysis
+Light Executor Event        = $job03
+Sales Forecast Prediction   = $job04
+Scala_ML-Budget             = $job05
+poc                         = Test
+POC                         = Dev
+
+[Job Name]
+Test                = "Customer Product Usage"
+Config Hint Event Spark3 = "Sales Forecast Prediction"
+
+[User]
+
+[Inefficient]
+
+;------------------------------------
+;------------------------------------
+;                EMR
+;------------------------------------
+;------------------------------------
